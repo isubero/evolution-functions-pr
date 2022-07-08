@@ -29,6 +29,7 @@ class Evolution_Functions {
 
         // Active promo
         include_once 'promos/andrea-zambrana.php';
+        include_once 'promos/florencia-botta.php';
     }
 
     /**
