@@ -21,6 +21,9 @@ class Evolution_Functions {
         // Set plugin path
         define( 'EVOLUTION_FUNCTIONS_PLUGIN_PATH', plugin_dir_path(__FILE__) );
 
+        // Enqueue scripts
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
         // Register ATH Móvil payment gateway
         include_once 'includes/payment-gateways/ath-movil/ath-movil.php';
 
@@ -42,6 +45,13 @@ class Evolution_Functions {
         }
 
         return $available_gateways;
+    }
+
+    /**
+     * Enqueue javascript and styles
+     */
+    public function enqueue_scripts() {
+        wp_enqueue_script( 'evolution-facebook-ads', plugins_url('/assets/js/facebook.js', __FILE__), null, '1.0', true );
     }
 }
 
