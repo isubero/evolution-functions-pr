@@ -30,9 +30,7 @@ class Evolution_Functions {
         // Restrict payment gateways by role
         add_filter( 'woocommerce_available_payment_gateways', array($this, 'evolution_available_payment_gateways') );
 
-        // Active promo
-        include_once 'promos/andrea-zambrana.php';
-        include_once 'promos/florencia-botta.php';
+        // Active promos
         include_once 'promos/bienvenido.php';
     }
 
