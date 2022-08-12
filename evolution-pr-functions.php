@@ -32,6 +32,7 @@ class Evolution_Functions {
 
         // Active promos
         include_once 'promos/bienvenido.php';
+        include_once 'promos/verano.php';
     }
 
     /**
