@@ -17,7 +17,7 @@ function andrea_zambrana_permanent_promo() {
     }
 
     // Ebook
-    $ebook = wp_get_environment_type() == 'local' ? 2827 : 3338;
+    $ebook_product_id = wp_get_environment_type() == 'local' ? 2827 : 3338;
     $ebook_cart_id = WC()->cart->generate_cart_id($ebook_product_id);
     $ebook_cart_item_key = WC()->cart->find_product_in_cart($ebook_cart_id);
 
