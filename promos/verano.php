@@ -21,7 +21,7 @@ function verano_promo() {
     $ebook_1_cart_id = WC()->cart->generate_cart_id($ebook_1_product_id);
     $ebook_1_cart_item_key = WC()->cart->find_product_in_cart($ebook_1_cart_id);
 
-    if ( WC()->cart->has_discount( 'veranoplus' ) ) {
+    if ( WC()->cart->has_discount( 'verano' ) || WC()->cart->has_discount( 'veranoplus' ) ) {
         // If promo product is already in cart, update quantity
         if ( $ebook_1_cart_item_key ) {
             $cart_item = WC()->cart->get_cart_item( $ebook_1_cart_item_key );
