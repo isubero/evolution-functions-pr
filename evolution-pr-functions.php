@@ -35,7 +35,7 @@ class Evolution_Functions {
         include_once 'promos/andrea-zambrana-az20.php';
 
         // Temporary promos
-        include_once 'promos/verano.php';
+        include_once 'promos/fuerte.php';
     }
 
     /**
