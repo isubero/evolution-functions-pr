@@ -96,7 +96,7 @@ function strong_cart_updated() {
                 WC()->cart->set_quantity( $sleep_cart_item_key, 1 );
             }
         } else {
-            WC()->cart->add_to_cart( $sleep_cart_item_key, 1 );
+            WC()->cart->add_to_cart( $sleep_product_id, 1 );
         }
     } else {
         if ( $sleep_cart_item_key ) {
