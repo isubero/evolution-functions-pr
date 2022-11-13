@@ -19,7 +19,7 @@ function black_friday_promo() {
     }
 
     // Black friday product
-    $bf_product_id = wp_get_environment_type() == 'local' ? 2857 : null;
+    $bf_product_id = wp_get_environment_type() == 'local' ? 2857 : 4438;
     $bf_cart_id = WC()->cart->generate_cart_id($bf_product_id);
     $bf_cart_item_key = WC()->cart->find_product_in_cart($bf_cart_id);
 
@@ -72,9 +72,9 @@ function black_friday_email_before_order_table( $order, $sent_to_admin, $plain_t
 
     if ( order_contains_product_category($order, 'stacks') ) {
         echo '<h2>Black Friday</h2>';
-        echo '<p>Como agradecimiento por haber participado en la promoción de Black Friday, te regalamos <strong>30% de descuento</strong> en el cualquiera de <a href="https://www.andreazambrana.com/taz28LEG">los programas de Andrea Zambrana</a>.</p>';
+        echo '<p>Como agradecimiento por haber participado en la promoción de Black Friday, te regalamos <strong>30% de descuento</strong> en el cualquiera de <a href="https://www.zambranahealthcoach.com/programas-online/">los programas de Andrea Zambrana</a>.</p>';
         echo '<p>Tan solo tienes que usar el código de descuento <strong>taz30</strong></p>';
-        echo '<p>Haz clic aquí para ver los programas disponibles: <a href="https://www.andreazambrana.com/taz28LEG">Programa Andrea Zambrana</a></p>';
+        echo '<p>Haz clic aquí para ver los programas disponibles: <a href="https://www.zambranahealthcoach.com/programas-online/">Programa Andrea Zambrana</a></p>';
     }
     
 }
