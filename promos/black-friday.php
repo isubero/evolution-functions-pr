@@ -1,7 +1,7 @@
 <?php
 /**
  * Promo: Promo Black Friday 2022
- * Fecha:
+ * Fecha: Hasta el 30 de noviembre de 2022
  * Descripción: Con la compra de cualquier combo: 2 ebooks de regalo, 
  * libro físico de Andrea Zambrana, 30% de descuento en programas de Andrea Zambrana
  * y 15% de descuento en todos los combos de Evolution Advance
@@ -40,6 +40,28 @@ function black_friday_promo() {
         }
     }
 }
+
+/**
+ * Programmatically add 15% discount to all products in "stacks" category
+ */
+add_action( 'woocommerce_product_get_price', 'black_friday_simple_product_discount', 20, 2 );
+
+function black_friday_simple_product_discount( $price, $product ) {
+    if ( has_term( 'stacks', 'product_cat', $product->get_id() ) ) {
+        $price = $price * 0.85;
+    }
+    return $price;
+}
+
+add_action( 'woocommerce_product_variation_get_price', 'black_friday_variation_product_discount', 20, 2 );
+
+function black_friday_variation_product_discount( $price, $product ) {
+    if ( has_term( 'stacks', 'product_cat', $product->get_parent_id() ) ) {
+        $price = $price * 0.85;
+    }
+    return $price;
+}
+
 
 /**
  * Add text to order email
