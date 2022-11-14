@@ -61,20 +61,3 @@ function black_friday_variation_product_discount( $price, $product ) {
     }
     return $price;
 }
-
-
-/**
- * Add text to order email
- */
-add_action( 'woocommerce_email_before_order_table', 'black_friday_email_before_order_table', 20, 4 );
-
-function black_friday_email_before_order_table( $order, $sent_to_admin, $plain_text, $email ) {
-
-    if ( order_contains_product_category($order, 'stacks') ) {
-        echo '<h2>Black Friday</h2>';
-        echo '<p>Como agradecimiento por haber participado en la promoción de Black Friday, te regalamos <strong>30% de descuento</strong> en el cualquiera de <a href="https://www.zambranahealthcoach.com/programas-online/">los programas de Andrea Zambrana</a>.</p>';
-        echo '<p>Tan solo tienes que usar el código de descuento <strong>taz30</strong></p>';
-        echo '<p>Haz clic aquí para ver los programas disponibles: <a href="https://www.zambranahealthcoach.com/programas-online/">Programa Andrea Zambrana</a></p>';
-    }
-    
-}
