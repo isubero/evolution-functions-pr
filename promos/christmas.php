@@ -84,3 +84,23 @@ function christmas_promo() {
         }
     }
 }
+
+/**
+ * Display price discount in product loop
+ */
+add_action( 'woocommerce_before_shop_loop_item_title', 'christmas_product_loop_discount', 20 );
+
+function christmas_product_loop_discount() {
+    global $product;
+
+    if ( $product->is_type( 'variable' ) ) {
+        $price = $product->get_variation_price( 'min', true );
+    } else {
+        $price = $product->get_price();
+    }
+
+    $discount = $price * 0.1;
+    $discount = number_format( $discount, 2, '.', '' );
+
+    echo '<span class="discount" style="color: #1c8f1c; font-weight: 600;">Menos 10% de descuento 🎄</span>';
+}
