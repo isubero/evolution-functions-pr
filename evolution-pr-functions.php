@@ -33,9 +33,6 @@ class Evolution_Functions {
         // Permanent promos
         include_once 'promos/bienvenido.php';
         include_once 'promos/andrea-zambrana-az20.php';
-
-        // Temporary promos
-        include_once 'promos/christmas.php';
     }
 
     /**
